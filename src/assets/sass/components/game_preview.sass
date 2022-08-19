@@ -1,0 +1,59 @@
+@import '../utils/mixin'
+
+.game_list .item
+    @include flex(center, center, column)
+    padding: 8px
+    border-radius: 8px
+    background: white
+    .preview-image
+        @include back_image()
+        width: 100%
+        height: 320px
+        @media ( max-width: 2000px )
+            height: 280px
+        @media ( max-width: 1550px )
+            height: 240px
+        @media ( max-width: 900px )
+            height: 320px
+    .info
+        width: 100%
+        padding-top: 8px
+        @include flex(space-between, center)
+        .content
+            @include flex(center, center)
+            img
+                width: 90px
+                height: 90px
+                margin-right: 8px
+            .text
+                @include flex(space-between, flex-start, column)
+                height: 80px
+                h4
+                    color: black
+                h5
+                    color: #6C757D
+                .rating
+                    @include rating_block()
+
+        button
+            @include blue_btn()
+            padding: 9px 17px
+            font-size: 20px
+            font-weight: 300
+
+@media ( max-width: 500px )
+    .game_list .item
+        .preview-image
+            display: none
+        .info
+            padding-top: 0
+
+@media ( max-width: 420px )
+    .game_list .item .info 
+        .content .text
+            .rating span
+                font-size: 15px
+        button
+            font-size: 16px
+            padding: 5px 8px
+            margin-left: 5px

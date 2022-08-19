@@ -1,0 +1,53 @@
+@import '../../../utils/mixin'
+
+.detail-game-info .flex
+    margin-top: 35px
+    @include flex(flex-start, flex-start)
+    .details
+        flex: 4
+        padding: 15px
+        border-radius: 8px 
+        background: white
+        .screenshots 
+            width: 100%
+            .list
+                width: 100%
+                max-width: 100%
+                overflow: hidden
+                height: 270px
+                margin: 15px 0
+                position: relative
+                @media ( max-width: 2000px )
+                    height: 170px
+                @media ( max-width: 1024px )
+                    height: 270px
+                @media ( max-width: 470px )
+                    height: 170px
+        .text p
+            margin: 15px 0 
+            color: #6C757D           
+    .related
+        flex: 2
+        background: white
+        margin-left: 35px
+        padding: 15px 
+        border-radius: 8px
+        @media ( max-width: 420px )
+            h3
+                margin-bottom: 5px
+
+@media ( max-width: 1350px )
+    .detail-game-info .flex
+        @include flex(flex-start, center, column)
+        .details, .related
+            width: calc( 100% - 30px )
+        .related
+            margin-left: 0
+            margin: 35px 0
+
+@media ( max-width: 1350px )
+    .detail-game-info .flex
+        .details, .related
+            border-radius: 0
+
+@import '../sliders'

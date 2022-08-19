@@ -1,0 +1,42 @@
+@import '../../../utils/mixin'
+
+.detail-game-info .flex .details .screenshots .list
+
+    .slider.desctop
+        width: 130%
+        .item
+            @include back_image()
+            flex: 1
+            height: 100%
+            &:nth-child(2)
+                margin: 0 20px
+        @media ( max-width: 1024px )
+            display: none
+    button.next
+        position: absolute
+        top: 0
+        right: 0
+        width: max-content
+        height: 100%
+        background: white
+        border: 1px solid #0000006c
+        border-left: none
+        padding: 0 5px
+        z-index: 2
+        cursor: pointer
+        transform: translateX(100%)
+        box-shadow: 0 0 50px 20px white
+        transition: 0.3s
+        &.left
+            right: none
+            left: 0
+            transform: rotateY(180deg) translateX(100%)
+        svg
+            width: 20px
+        @media ( max-width: 1024px )
+            display: none
+    &:hover button.next
+        transform: translateX(0%)
+        box-shadow: 0 0 0px 0px white
+        &.left
+            transform: rotateY(180deg) translateX(0%)

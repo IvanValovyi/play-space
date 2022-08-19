@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import DefaultLayout from './Layout'
+
+import MainPage from './components/Pages/MainPage'
+import GamePage from './components/Pages/GamePage'
+
+import games from "./data"
+
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+
+import './assets/sass/main.sass'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter basename='play-space'>
+      <Routes>
+        <Route path='/'>
+
+          <Route index element={
+            <DefaultLayout className='main_page'>
+              <MainPage games={games}/>
+            </DefaultLayout>}>
+          </Route>
+
+          <Route path=':game_url' element={
+            <DefaultLayout className='game_page'>
+              <GamePage/>
+            </DefaultLayout>}>
+          </Route>
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

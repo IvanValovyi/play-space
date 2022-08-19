@@ -1,0 +1,15 @@
+@import '../../utils/mixin'
+    
+.main_content.game_page
+    @media ( max-width: 670px )
+        padding: 0
+    button.buy
+        @include blue_btn()
+        font-size: 20px
+        font-weight: 300
+        padding: 10px 50px
+        @media ( max-width: 900px )
+            padding: 10px 0
+            width: 100%
+
+@import './elements'

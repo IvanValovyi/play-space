@@ -1,0 +1,40 @@
+@import '../../utils/mixin'
+    
+.switcher
+    @include flex(center, center)
+    margin-top: 30px
+    span
+        @include flex(center, center)
+        padding: 0px 25px
+        height: 50px
+        background: white
+        color: #0D6EFD
+        font-size: 20px
+        margin: 0 1px
+        cursor: pointer
+        &:hover
+            background: #00000015
+            color: #043e94
+        &.active
+            background: #0D6EFD
+            color: white
+    svg
+        width: 20px
+        height: 20px
+        position: relative
+        padding: 15px
+        background: white
+        fill: #0D6EFD
+        cursor: pointer
+    .dots::before
+        content: '\B7 \B7 \B7'
+    @media ( max-width: 670px )
+        margin-top: 5px
+        span
+            padding: 0 10px
+            height: 30px
+            font-size: 12px
+        svg
+            width: 12px
+            height: 12px
+            padding: 9px 10px

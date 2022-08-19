@@ -1,0 +1,17 @@
+@import '../utils/mixin'
+
+footer
+    @include flex(center, center)
+    background: #313237
+    padding: 15px 0
+    .logo
+        @include flex(center, center, column)
+        svg
+            width: 34px
+            height: 21px
+            margin-bottom: 5px
+            fill: white
+        span
+            font-size: 20px
+            font-weight: 300
+            color: white

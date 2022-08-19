@@ -1,0 +1,39 @@
+@import '../utils/mixin'
+
+.game_list
+    @include flex(space-between, center)
+    flex-wrap: wrap
+    a
+        width: calc( 100% / 3 - 20px )
+        margin: 20px 0
+    &.relevant-offers
+        @include flex(center, center, column)
+        .item
+            padding: 10px 0
+            .preview-image
+                display: none
+            .info
+                padding-top: 0
+                button.buy
+                    margin-left: 5px
+                    width: max-content
+                    @media ( max-width: 900px )
+                        font-size: 16px
+                        padding: 5px 8px
+                        margin-left: 5px
+        a
+            min-width: 100%
+            margin: 5px 0
+            @media ( max-width: 420px )
+                margin: 0
+
+@media ( max-width: 1300px )
+    .game_list a
+        width: calc( 50% - 20px )
+
+@media ( max-width: 900px )
+    .game_list
+        @include flex(center, center, column)
+        a
+            min-width: 100%
+            margin: 10px 0

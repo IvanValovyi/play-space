@@ -1,0 +1,38 @@
+@import '../utils/mixin'
+
+header
+    user-select: none
+    padding: 15px 50px
+    background: #F8F9FAE5
+    @include flex(center, center)
+    position: sticky
+    top: 0
+    z-index: 3
+    .logo
+        @include flex(center, center)
+        svg
+            width: 34px
+            height: 21px
+            margin-right: 10px
+            fill: #0D6EFD
+        h1
+            color: black
+    button
+        position: absolute
+        top: 50%
+        right: 50px
+        transform: translateY(-50%)
+        font-size: 16px
+        font-weight: 400
+        padding: 7px 14px
+        @include blue_btn()
+
+@media ( max-width: 670px )
+    header
+        padding: 15px 10px
+        justify-content: space-between
+        .logo svg
+            margin-right: 5px
+        button
+            position: static
+            transform: none
